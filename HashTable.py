@@ -75,7 +75,14 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    pass
+    '''This method traverse through the every Linked List in the table and print the key value pairs.'''
+
+    index = 0
+    for linked_list in self.arr:
+      print('\n\n')
+      print(f'This is the Linked List in the index {index} of the Hash Table')
+      linked_list.print_nodes()
+      index += 1
 
 
 if __name__ == '__main__':
