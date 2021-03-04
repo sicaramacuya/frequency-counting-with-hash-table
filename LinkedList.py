@@ -33,7 +33,6 @@ class LinkedList:
       return -1
 
 
-
   def length(self):
     if self.head == None:
       return 0
@@ -62,6 +61,7 @@ class LinkedList:
     if current == None:
       print('The linked list is empty.')
     else:
-      for i in range(self.length()):
-        print(f'Node {i}: {current.data}')
+      for _ in range(self.length()):
+        key, value = current.data[0], current.data[1]
+        print(f'{key}: {value}')
         current = current.next
