@@ -38,7 +38,7 @@ class HashTable:
         if vowel == character:
           count += 1
 
-    index = count
+    index = count % self.size
     return index
 
 
@@ -47,7 +47,18 @@ class HashTable:
   # Should insert a key value pair into the hash table, where the key is the word and the value is a counter for the number of times the word appeared. When inserting a new word in the hash table, be sure to check if there is a Node with the same key in the table already.
 
   def insert(self, key, value):
-    pass
+    
+    new_key_value = (key, value)
+
+    index = self.hash_func(key)
+    linked_list = self.arr[index]
+
+    if linked_list.find(key) == -1:
+      print(f'{key} was not found.')
+      linked_list.append(new_key_value)
+    else:
+      linked_list.update(key,value)
+
 
 
 
@@ -70,4 +81,13 @@ class HashTable:
 if __name__ == '__main__':
   ht = HashTable(6)
   # print(ht.arr)
-  # ht.hash_func('Hello FunnIi!')
+  print(ht.hash_func('Eric Morales'))
+  print("---")
+  print(ht.hash_func('Javier Morales'))
+  print("---")
+  print(ht.hash_func('Ana Morales'))
+  ht.insert("Eric Morales", 1)
+  ht.insert("Javier Morales", 1)
+  ht.insert("Eric Morales", 2)
+  print("---")
+  ht.insert("Ana Morales", 1)
