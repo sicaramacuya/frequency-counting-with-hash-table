@@ -13,6 +13,8 @@ class HashTable:
   # This method creates an array (list) of a given size and populates each of its elements with a LinkedList object.
 
   def create_arr(self, size):
+    '''This method creates an array (list) of a given size and populates each of its elements with a LinkedList object.'''
+
     array = []
     for _ in range(size):
       array.append(LinkedList())
@@ -27,8 +29,17 @@ class HashTable:
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
 
   def hash_func(self, key):
-    
-    pass
+    '''This hash function will count how manny vowels are in a string. An return the count to be use as an index.'''
+
+    vowels = "AaEeIiOoUu"
+    count = 0
+    for vowel in vowels:
+      for character in key:
+        if vowel == character:
+          count += 1
+
+    index = count
+    return index
 
 
   # 3️⃣ TODO: Complete the insert method.
@@ -57,5 +68,6 @@ class HashTable:
 
 
 if __name__ == '__main__':
-  # ht = HashTable(6)
+  ht = HashTable(6)
   # print(ht.arr)
+  # ht.hash_func('Hello FunnIi!')
