@@ -1,7 +1,7 @@
 from HashTable import HashTable
 from os import path
 import string
-# from TesterFunction import test_counter
+from TesterFunction import test_counter
 
 
 

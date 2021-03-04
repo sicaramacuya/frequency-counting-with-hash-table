@@ -21,7 +21,7 @@ class LinkedList:
 
     while current != None and not found:
 
-      if current.data == item:
+      if current.data[0] == item:
         found = True
       else:
         current = current.next
@@ -44,6 +44,16 @@ class LinkedList:
         current = current.next
         counter +=1
       return counter
+
+
+  def update(self, key, value):
+    count = self.find(key)
+    current = self.head
+
+    for _ in range(count):
+      current.next
+
+    current.data = (key, (current.data[1] + value))
 
 
   def print_nodes(self):
